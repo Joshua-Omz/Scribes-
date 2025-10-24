@@ -7,8 +7,11 @@ sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-# Hardcode database URL for testing
-DATABASE_URL = "postgresql://postgres:bbjbbjbbj371419@localhost:5432/scribes_db"
+# Get database URL from environment variable for security
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:password@localhost:5432/scribes_db"  # Default for local development only
+)
 
 def test_connection():
     engine = create_engine(DATABASE_URL)

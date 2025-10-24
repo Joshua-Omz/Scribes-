@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     
     # Database
-    DATABASE_URL: Union[str, PostgresDsn] = "postgresql://postgres:bbjbbjbbj371419@localhost:5432/scribes_db"
+    DATABASE_URL: Union[str, PostgresDsn] = "postgresql://postgres:password@localhost:5432/scribes_db"
 
     # CORS
     CORS_ORIGINS: List[str] = ["*"]
